@@ -21,7 +21,7 @@ function drawClock() {
 function drawNumbers(ctx, radius) {
   var ang;
   var num;
-  var abc=["0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","x","y","z"];
+  var abc=["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","x","y","z"];
   
   ctx.font = radius*0.10 + "px arial";
   ctx.textBaseline="middle";
@@ -31,7 +31,7 @@ function drawNumbers(ctx, radius) {
     ctx.rotate(ang);
     ctx.translate(0, -radius*0.90);
     ctx.rotate(-ang);
-    ctx.fillText(abc[num], 0, 0);
+    ctx.fillText(abc[num-1l], 0, 0);
 	ctx.beginPath();
 	ctx.arc(0,0,15,0,2*Math.PI);
 	ctx.stroke();
