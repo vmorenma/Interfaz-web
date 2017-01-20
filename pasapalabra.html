@@ -1,133 +1,46 @@
 <!DOCTYPE html>
 <html>
-	<body>
+<body>
 
-	<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">
-	Your browser does not support the HTML5 canvas tag.</canvas>
+<canvas id="canvas" width="400" height="400">
+</canvas>
 
-	<script>
+<script>
+var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+drawClock();
 
-		var c = document.getElementById("myCanvas");
-		var ctx = c.getContext("2d");
-		ctx.beginPath();
-		ctx.arc(240, 103, 10, 0, 2 * Math.PI);
-		ctx.stroke();
+function drawClock() {
+  //drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+}
 
-		ctx.beginPath();
-		ctx.arc(273, 105, 10, 0, 2 * Math.PI);
-		ctx.stroke();
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  var abc=["0","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","u","v","x","y","z"];
+  
+  ctx.font = radius*0.10 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 25; num++){
+    ang = num * Math.PI / 12;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.90);
+    ctx.rotate(-ang);
+    ctx.fillText(abc[num], 0, 0);
+	ctx.beginPath();
+	ctx.arc(0,0,10,0,2*Math.PI);
+	ctx.stroke();
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.90);
+    ctx.rotate(-ang);
+  }
+}
+</script>
 
-		ctx.beginPath();
-		ctx.arc(303, 112, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(331, 127, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(357, 150, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(379, 176, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(392, 203, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(400, 233, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(397, 271, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(390, 303, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(373, 331, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(355, 357, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(327, 377, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(297, 390, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(260, 397, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(229, 395, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(198, 389, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(171, 373, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(146, 350, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(124, 328, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(112, 298, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(104, 266, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(107, 229, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(111, 197, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(123, 172, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(147, 144, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(175, 123, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-		ctx.beginPath();
-		ctx.arc(205, 112, 10, 0, 2 * Math.PI);
-		ctx.stroke();
-
-
-
-
-
-
-
-	</script> 
-
-	</body>
+</body>
 </html>
