@@ -1,0 +1,48 @@
+body{
+    background-color: yellow
+}
+
+#makeMeDraggable {
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(../img/drag.png);
+    background-repeat: no-repeat;
+    background-position:center; 
+}
+#makeMeDroppable {
+    float: right;
+    width: 100px; 
+    height: 100px; 
+    background-image: url(../img/drop.png);
+    background-repeat: no-repeat;
+    background-position:center; 
+}
+
+#content{
+    position:absolute;
+    top:40%;
+    left:40%;
+    height: 100px;
+     width: 300px;
+
+}
+.dashdiv{
+    height: 2px;
+    width: 210px;
+    position: absolute;
+    background: repeating-linear-gradient(90deg,white,transparent 5%);
+    background-repeat: repeat-x;
+    animation: border-move 6s infinite linear;
+    top: 49%;
+    left: 16%;
+    z-index: -1;
+}
+@keyframes border-move{
+    0%{
+        background-position: 0px,0px;
+    }
+    100%{
+        background-position: 300px 0px;
+    }
+}
