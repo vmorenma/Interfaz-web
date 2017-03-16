@@ -35,7 +35,8 @@ body{
     background-repeat: repeat-x;
     animation: border-move 6s infinite linear;
     top: 49%;
-    left: 16%;
+    right: 16%;
+    max-width: 300px;
     z-index: -1;
 }
 @keyframes border-move{

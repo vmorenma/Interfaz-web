@@ -10,6 +10,9 @@ function init() {
         },
         {
             snap: '#makeMeDroppable'
+        },
+        {
+            drag:handleDragEvent
         }
     );
     $('#makeMeDroppable').droppable(
@@ -21,4 +24,9 @@ function init() {
 
 function handleDropEvent(event, ui) {
     window.location.href = 'http://www.example.com';
+}
+
+function handleDragEvent(event, ui){
+    $('.dashdiv').css("width",300-(event.clientX-450));
+    console.log(300-(event.clientX-450))
 }
