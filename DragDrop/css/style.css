@@ -8,28 +8,28 @@ body{
     height: 100px;
     background-image: url(../img/drag.png);
     background-repeat: no-repeat;
-    background-position:center; 
+    background-position:center;
 }
 #makeMeDroppable {
     float: right;
-    width: 100px; 
-    height: 100px; 
+    width: 100px;
+    height: 100px;
     background-image: url(../img/drop.png);
     background-repeat: no-repeat;
-    background-position:center; 
+    background-position:center;
 }
 
 #content{
     position:absolute;
     top:40%;
-    left:40%;
+    left:32%;
     height: 100px;
-     width: 300px;
+     width: 400px;
 
 }
 .dashdiv{
     height: 2px;
-    width: 210px;
+    width: 300px;
     position: absolute;
     background: repeating-linear-gradient(90deg,white,transparent 5%);
     background-repeat: repeat-x;
